@@ -28,5 +28,3 @@
 # - Check out the official documentation `https://bazel.build/run/bazelrc` for more details.
 
 common --lockfile_mode=off # Ideally you want to use a lockfile, but for this example we disable it for simplicity.
-
-build --copt='-I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1'
