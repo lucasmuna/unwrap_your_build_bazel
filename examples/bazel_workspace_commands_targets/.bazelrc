@@ -1,0 +1,32 @@
+# This is where you can set Bazel options for the workspace.
+#
+# Useful information about `.bazelrc` files:
+#
+# - There are four types of `.bazelrc` files:
+#   1. `system` - located in the system directorym applies to all workspaces in the system.
+#   2. `workspace` - located in the workspace root, applies to the current workspace.
+#   3. `home` - located in the user directory, applies to the the current user.
+#   4. `user` - custom location, must be specified with `--bazelrc=/path/to/file`.
+#   They are optional and loaded in the order listed above, so the last one takes precedence.
+#
+# - One can extend one `.bazelrc` file with another using `import` or `try-import` statements.
+#
+# - Options from the command line always take precedence over options from `.bazelrc` files.
+#
+# - `.bazelrc` files are not transitively propagated, so, for example, if another workspace
+#   depends on this workspace, it will not automatically inherit the options from this file.
+#
+# - Configurations can inherit from each other. It is usually helpful to create base configs.
+#
+# - Create configurations for specific commands, e.g., `startup`, `common`, `build`, `test`,
+#   `coverage`, `run`, `query`, `clean`, etc.
+#
+# - Avoid making everyting default. Try to create specific configurations for different use
+#   cases, for example, building a C++ target usually does not require a python toolchain and
+#   vice-versa. Find your own balance between convenience and performance.
+#
+# - Check out the official documentation `https://bazel.build/run/bazelrc` for more details.
+
+common --lockfile_mode=off # Ideally you want to use a lockfile, but for this example we disable it for simplicity.
+
+build --copt='-I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1'

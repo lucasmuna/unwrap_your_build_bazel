@@ -1,0 +1,9 @@
+8.3.1
+
+# It is higly recommended to specify a fixed Bazel version.
+#
+# Some Bazel features are still maturing, so you would probably want to schedule
+# a time window to tackle all possible breaking changes.
+#
+# Check the official documentation about backwards compatibility:
+# https://bazel.build/release/backward-compatibility
