@@ -1,0 +1,9 @@
+# Describe the module and add dependencies.
+#
+# Check the official documentation for more information:
+# https://bazel.build/rules/lib/globals/module
+
+module(
+    name = "bazel_workspace_commands_targets",
+    version = "0.0.1",
+)
