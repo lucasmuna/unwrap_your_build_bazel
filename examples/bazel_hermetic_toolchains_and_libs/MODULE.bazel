@@ -7,3 +7,44 @@ module(
     name = "bazel_workspace_commands_targets",
     version = "0.0.1",
 )
+
+# Load `rules_python` as stated under:
+# https://github.com/bazel-contrib/rules_python/releases/tag/1.5.3
+# They are also adding an `uv` integration that may replace `pip`.
+
+bazel_dep(name = "rules_python", version = "1.5.3")
+
+python = use_extension("@rules_python//python/extensions:python.bzl", "python")
+python.toolchain(
+    python_version = "3.13",
+)
+
+pip = use_extension("@rules_python//python/extensions:pip.bzl", "pip")
+pip.parse(
+    hub_name = "our_pip_hub",
+    python_version = "3.13",
+    requirements_lock = "//:requirements_lock.txt",
+)
+use_repo(pip, "our_pip_hub")
+
+# Load `llvm_toolchains` as stated under:
+# https://github.com/bazel-contrib/toolchains_llvm/releases/tag/v1.4.0
+
+bazel_dep(name = "toolchains_llvm", version = "1.4.0")
+
+llvm = use_extension("@toolchains_llvm//toolchain/extensions:llvm.bzl", "llvm")
+llvm.toolchain(
+    llvm_version = "16.0.0",
+)
+use_repo(llvm, "llvm_toolchain")
+
+register_toolchains("@llvm_toolchain//:all")
+
+# Load `googletest` as stated under:
+# https://github.com/google/googletest/releases/tag/v1.17.0
+# https://google.github.io/googletest/quickstart-bazel.html
+
+bazel_dep(name = "googletest", version = "1.17.0")
+
+# For C/CPP libraries that do not support Bazel yet, see:
+# https://github.com/bazel-contrib/rules_foreign_cc

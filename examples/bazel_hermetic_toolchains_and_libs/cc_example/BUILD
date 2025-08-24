@@ -1,7 +1,7 @@
 cc_binary(
     name = "example",
     srcs = ["example.cpp"],
-    deps = [":lib"], # The `:` from `:lib` equals to `//cc_example:` in this case.
+    deps = [":lib"],  # The `:` from `:lib` equals to `//cc_example:` in this case.
 )
 
 cc_library(
@@ -12,5 +12,9 @@ cc_library(
 cc_test(
     name = "test",
     srcs = ["test.cpp"],
-    deps = [":lib"],
+    deps = [
+        ":lib",
+        "@googletest//:gtest",  # Comment this line out and run the test again.
+        "@googletest//:gtest_main",  # Comment this line out and run the test again.
+    ],
 )

@@ -1,13 +1,9 @@
 #include "lib.h"
 
-/*
- * We could have used GTEST and/or tested `example.cpp` it self but, as it
- * would require more setup, I decided to keep it simple and just show how
- * to create a simple `cc_test`.
- */
+#include <gtest/gtest.h>
 
-int main()
+TEST(HelloTest, BasicAssertions)
 {
     printMessage("Unwrap Your Build");
-    return 0;
+    EXPECT_EQ(7 * 6, 42);
 }
