@@ -1,0 +1,2 @@
+# Bazel creates symlinks named `bazel-*` unless otherwise specified.
+/bazel-*

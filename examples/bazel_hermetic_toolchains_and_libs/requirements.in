@@ -1,0 +1,3 @@
+# Normal pip requirement file.
+
+pytest==8.4.1
