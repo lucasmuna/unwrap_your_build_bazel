@@ -4,7 +4,7 @@
 # https://bazel.build/rules/lib/globals/module
 
 module(
-    name = "bazel_workspace_commands_targets",
+    name = "bazel_basics_part_3",
     version = "0.0.1",
 )
 
