@@ -1,8 +1,4 @@
-# Bazel Workspace, Commands and Targets
-
-Support for https://unwrap.hashnode.dev/bazel-basics-part-2.
-
-Get more familiarized with a Bazel workspace and its commands and targets.
+# Bazel Workspace, Commands and Targets - Playground
 
 ## Play with some commands
 

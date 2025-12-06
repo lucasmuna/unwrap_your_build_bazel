@@ -1,8 +1,4 @@
-# Bazel Hermetic Toolchains and Libraries
-
-Support for https://unwrap.hashnode.dev/bazel-basics-part-3.
-
-Understand how to set hermetic toolchains and how to add external libraries to them.
+# Bazel Hermetic Toolchains and Libraries - Playground
 
 ## Play with some commands
 
