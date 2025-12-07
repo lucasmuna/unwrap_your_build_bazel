@@ -4,7 +4,7 @@
 # https://bazel.build/rules/lib/globals/module
 
 module(
-    name = "bazel_basics_part_3",
+    name = "2_hermetic_toolchains_and_libraries",
     version = "0.0.1",
 )
 
