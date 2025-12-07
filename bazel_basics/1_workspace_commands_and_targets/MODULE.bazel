@@ -4,6 +4,6 @@
 # https://bazel.build/rules/lib/globals/module
 
 module(
-    name = "1_workspace_commands_and_targets",
+    name = "workspace_commands_and_targets",
     version = "0.0.1",
 )
